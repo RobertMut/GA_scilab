@@ -20,7 +20,7 @@ function fitness=CalculateFitnessLF(population, expressionStr)
             //disp(data(j,i))
 
             end
-            fitness(k) = evstr(expressionStr)
+            fitness(k) = abs(1/evstr(expressionStr))
             k = k + 1
     end
 endfunction
