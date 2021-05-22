@@ -1,6 +1,7 @@
-//Generacja sprawności na podstawie wprowadzonego wzoru matematycznego expressionStr i populacji. Liczba genów to tearz liczba zmiennych we wzorze 
-//Potrzebne dopisanie obliczenia sprawności na podstawie wektora binarnego
-function fitness=CalculateFitnessLF(population, expressionStr)
+//Funkcja cel realizuje aktualnie tę część kodu
+
+
+/*function fitness=CalculateFitnessLF(population)
     //Obliczenie ilości kolumn i wierszy populacji
     rows = size(population)(1)
     columns = size(population)(2)
@@ -57,3 +58,4 @@ function data=AssignData(population, variables)
     end
 //dbg    disp(data)
 endfunction
+*/
