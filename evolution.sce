@@ -48,3 +48,28 @@ function merged=MergePopulation(population1, population2)
     merged = population1
 endfunction
 
+function f=objectiveFunc(x,which_one)
+    
+// x -  macierz n x 2, n = ilosc punktow, x(i,:) - wsp. i-tego punktu
+//
+// rogalikowa dolina
+    if (which_one == 1) then
+        f=(0.25-x(:,1).^2-x(:,2).^2).^2+0.1*x(:,1)+0.055;
+    end
+//
+// paraboloida obrotowa, regularna kotlina
+    if (which_one == 2) then
+        f=3*x(:,1).^2+x(:,2).^2+0.01;
+    end
+//
+// bananowa dolina
+    if (which_one == 3) then
+        f=3*(x(:,2)-x(:,1).^2).^2 + 0.1*x(:,1).^2+0.01;
+    end
+// dolki
+    if (which_one == 4) then
+        f=x(:,1).^2+x(:,2).^2+(sin(2*%pi*x(:,1))).^2 + (sin(2*%pi*x(:,2))).^2+0.01;
+    end
+
+endfunction
+
