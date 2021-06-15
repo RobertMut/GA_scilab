@@ -16,8 +16,9 @@ function result=GeneticAlgorithm(N, M, p)
     end
     Maps(userIn);
     rpop = pop;
-    fittestIndex=GetFittest(rpop);
-    result = rpop( fittestIndex,: );
+    rfit = ObjectiveFunc(pop, userIn)
+    fittest=GetFittest(rfit);
+    result = rpop( fittest,: );
     disp("Cel:");
     disp(cel(result));
     disp("Wynik:");
