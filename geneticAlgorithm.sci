@@ -1,7 +1,6 @@
 function result=GeneticAlgorithm(N, M, p)
     close();
     exec("population.sci",-1);
-    exec("T03_cel.sci",-1);
     exec("selection.sci",-1);
     exec("evolution.sci",-1);
     disp(["1 - rogalikowa dolina";"2 - paraboloida obrotowa, regularna kotlina"..
@@ -10,9 +9,9 @@ function result=GeneticAlgorithm(N, M, p)
     pop = GeneratePopulation(N);
     show_window(0);
     for i=1:M do
-        fit = objectiveFunc(pop, userIn);
+        fit = ObjectiveFunc(pop, userIn);
         pop = NewPopulation(pop, fit, p);
-        MapPoint(pop, userIn);
+        MapPoint(pop);
         pop = KillWeakest(pop, userIn);
     end
     Maps(userIn);
@@ -26,19 +25,19 @@ function result=GeneticAlgorithm(N, M, p)
     show_window(1);
     Graph(pop);
     show_window(2);
-    MapPoint(result, userIn);
+    MapPoint(result);
     Maps(userIn);
     xstring(result(1),result(2),"Wynik");
 endfunction
 function Graph(population)
-    xtitle("GA", 'Osobniki', 'Wartość');
+    xtitle(["Olena Mikhieieva 19415";"Robert Mutniański 18555"], 'Osobniki', 'Wartość');
     plot2d(population);
     xgrid;
     legend("X", "Y");
 
 endfunction
 
-function MapPoint(result, userIn)
+function MapPoint(result)
     for i=1:size(result)(1)
         plot(result(i,1),result(i,2),'or');
     end
@@ -67,6 +66,7 @@ function Maps(which_one)
     if (which_one == 4) then
         ff=xx1.^2+xx2.^2+(sin(2*%pi*xx1).^2).*(sin(2*%pi*xx2).^2)+0.01;
     end
-contour2d(x1_0,x2_0,log(ff)',10,rect=[-1,-1,1,1]) ;
+    xtitle(["Olena Mikhieieva 19415";"Robert Mutniański 18555"]);
+    contour2d(x1_0,x2_0,log(ff)',10,rect=[-1,-1,1,1]) ;
 endfunction
 

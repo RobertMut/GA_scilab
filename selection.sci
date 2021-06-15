@@ -1,6 +1,6 @@
 function selectedPopulation=KillWeakest(population, userIn)
     selectedPopulation(:,:) = [];
-    fitness = objectiveFunc(population, userIn);
+    fitness = ObjectiveFunc(population, userIn);
     m = mean(fitness);
     for i=1:size(fitness)(1)
         if (fitness(i)<m)

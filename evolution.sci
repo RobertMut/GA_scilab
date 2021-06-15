@@ -35,20 +35,18 @@ endfunction
 function mutated=Mutate(genes,rnd, p)
     mutated = genes;
     if( rnd < p) then
-        index = round(1+(0+1)*rand());
         mutated = mutated + 0.2*[0.5-rand(), 0.5-rand()];
     end
 endfunction
 
 function merged=MergePopulation(population1, population2)
-    //merged(,:,)=[]
     for i=1:size(population2)(1)
         population1(size(population1)(1)+1,:) = population2(i,:);
     end
     merged = population1;
 endfunction
 
-function f=objectiveFunc(x,which_one)
+function f=ObjectiveFunc(x,which_one)
     
 // x -  macierz n x 2, n = ilosc punktow, x(i,:) - wsp. i-tego punktu
 //
