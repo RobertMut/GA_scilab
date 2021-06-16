@@ -20,7 +20,7 @@ function result=GeneticAlgorithm(N, M, p)
     fittest=GetFittest(rfit);
     result = rpop( fittest,: );
     disp("Cel:");
-    disp(cel(result));
+    disp(rfit(fittest));
     disp("Wynik:");
     disp(result);
     show_window(1);
