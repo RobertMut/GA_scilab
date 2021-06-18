@@ -27,14 +27,13 @@ endfunction
 
 function child=Crossover(parent1, parent2, p)
     r = rand();
-    rnd = round(0+(0+100)*r);
         genes = (1-r)*parent1+r*parent2;
-        child=Mutate(genes, rnd, p);
+        child=Mutate(genes, p);
 endfunction
 
-function mutated=Mutate(genes,rnd, p)
+function mutated=Mutate(genes, p)
     mutated = genes;
-    if( rnd < p) then
+    if( rand() < p) then
         mutated = mutated + 0.2*[0.5-rand(), 0.5-rand()];
     end
 endfunction

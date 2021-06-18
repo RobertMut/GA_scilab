@@ -70,4 +70,3 @@ function Maps(which_one)
     xtitle(["Olena Mikhieieva 19415";"Robert Mutniański 18555"]);
     contour2d(x1_0,x2_0,log(ff)',10,rect=[-1,-1,1,1]) ;
 endfunction
-
